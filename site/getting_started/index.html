@@ -23,7 +23,7 @@
         
       
       
-      <link rel="icon" href="../images/logo.svg">
+      <link rel="icon" href="../assets/logo.svg">
       <meta name="generator" content="zensical-0.1.2">
     
     
@@ -99,7 +99,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="./.." title="Assert Test" class="md-header__button md-logo" aria-label="Assert Test" data-md-component="logo">
       
-  <img src="../images/logo.svg" alt="Assert Test">
+  <img src="../assets/logo.svg" alt="Assert Test">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -219,7 +219,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="./.." title="Assert Test" class="md-nav__button md-logo" aria-label="Assert Test" data-md-component="logo">
       
-  <img src="../images/logo.svg" alt="Assert Test">
+  <img src="../assets/logo.svg" alt="Assert Test">
 
     </a>
     Assert Test
@@ -340,7 +340,7 @@
   <a href="#creating-a-test" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Creating a Test
+        Creating a test
       </span>
     </span>
   </a>
@@ -351,7 +351,18 @@
   <a href="#running-a-test" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Running a Test
+        Running a test
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-multiple-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Running multiple tests
       </span>
     </span>
   </a>
@@ -410,7 +421,7 @@
   <a href="#creating-a-test" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Creating a Test
+        Creating a test
       </span>
     </span>
   </a>
@@ -421,7 +432,18 @@
   <a href="#running-a-test" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Running a Test
+        Running a test
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-multiple-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Running multiple tests
       </span>
     </span>
   </a>
@@ -456,8 +478,8 @@
   
 
 
-<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<h2 id="creating-a-test">Creating a Test<a class="headerlink" href="#creating-a-test" title="Permanent link">&para;</a></h2>
+<h1 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<h2 id="creating-a-test">Creating a test<a class="headerlink" href="#creating-a-test" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Create a scene to be tested</li>
 <li>Add as many <code>assert()</code> you wanto to validate if everything is working right</li>
@@ -475,21 +497,68 @@
 </ul>
 <p>The test is just a scene that close itself!  </p>
 </div>
-<h2 id="running-a-test">Running a Test<a class="headerlink" href="#running-a-test" title="Permanent link">&para;</a></h2>
+<h2 id="running-a-test">Running a test<a class="headerlink" href="#running-a-test" title="Permanent link">&para;</a></h2>
 <p>The first step is to create a scene which will be responsible for running your test scenes:  </p>
 <figure>
 <img alt="Godot Scene Dock, showing AssertReport as root and AssertScene as child" src="./image00.png" />
 </figure>
-<p>These two nodes are essential:  </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <ul>
-<li><code>AssertReport</code>, which initiate the children tests and print their results  </li>
-<li><code>AssertScene</code>, which run the test scene in a new process  </li>
+<li><code>AssertReport</code> initiate the children tests and print their results  </li>
+<li><code>AssertScene</code> run the test scene in a new process  </li>
 </ul>
+</div>
 <p>Access your <code>AssertScene</code> properties and put your test scene in the <code>scene</code> property.  </p>
 <figure>
 <img alt="AssertScene properties" src="./image01.png" />
 </figure>
-<p>Save this scene and execute it to start the tests.</p>
+<p>Save this scene and execute it to start the tests! Your output should be something like:  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">No error</label><label for="__tabbed_1_2">Assert fail</label><label for="__tabbed_1_3">Timeouted</label><label for="__tabbed_1_4">Node leak</label><label for="__tabbed_1_5">RefCounted leak</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>(OK) Test description here
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1 OK, 0 FAIL
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>(FAIL) Test description here
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  SCRIPT ERROR: Assertion failed: assert message here
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>      ...
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>0 OK, 1 FAIL
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>(FAIL) Test description here --- Scene halted after exceeding time limit
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>0 OK, 1 FAIL
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>(FAIL) Test description here
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  WARNING: 1 ObjectDB instance was leaked at exit (run with `--verbose` for details).
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    at: cleanup (core/object/object.cpp:2536)
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>0 OK, 1 FAIL
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>(FAIL) Test description here
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  WARNING: 3 ObjectDB instance was leaked at exit (run with `--verbose` for details).
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    at: cleanup (core/object/object.cpp:2536)
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>0 OK, 1 FAIL
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>It's basically the result of your test scene and the <a href="https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)">stderr</a> messages.  </p>
+<h2 id="running-multiple-tests">Running multiple tests<a class="headerlink" href="#running-multiple-tests" title="Permanent link">&para;</a></h2>
+<p>To run multiple tests, just add more <code>AssertScene</code> to your scene and name it however you want. Example:  </p>
+<figure>
+<img alt="AssertReport with multiple AssertScene as children" src="./image02.png" />
+</figure>
 
 
 
