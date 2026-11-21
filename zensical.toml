@@ -12,7 +12,7 @@ repo_name = "thiagola92/assert-test"
 
 nav = [
   { "About" = "index.md" },
-  { "Getting Started" = "getting_started/index.md" },
+  { "Tutorial" = "tutorial/index.md" },
 ]
 
 # extra_css = ["stylesheets/extra.css"]

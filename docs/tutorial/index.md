@@ -1,8 +1,8 @@
 ---
-icon: lucide/rocket
+icon: lucide/graduation-cap
 ---
 
-# Getting started
+# Tutorial
 
 ## Creating a test
 - Create a scene to be tested
@@ -21,7 +21,7 @@ icon: lucide/rocket
     The test is just a scene that close itself!  
 
 ## Running a test
-The first step is to create a scene which will be responsible for running your test scenes:  
+The first step is to create a scene which will be responsible for running your test scenes. It should have an `AssertReport` with one or more `AssertScene` as children.  
 
 <figure markdown="span">
 ![Godot Scene Dock, showing AssertReport as root and AssertScene as child](./image00.png)
@@ -42,7 +42,7 @@ Save this scene and execute it to start the tests! Your output should be somethi
 === "No error"
     ```
     (OK) Test description here
-    1 OK, 0 FAIL
+    (1 OK, 0 FAIL)
     ```
 
 === "Assert fail"
@@ -52,7 +52,7 @@ Save this scene and execute it to start the tests! Your output should be somethi
       SCRIPT ERROR: Assertion failed: assert message here
           ...
     
-    0 OK, 1 FAIL
+    (0 OK, 1 FAIL)
     ```
 
 === "Timeouted"
@@ -60,34 +60,30 @@ Save this scene and execute it to start the tests! Your output should be somethi
     ```
     (FAIL) Test description here --- Scene halted after exceeding time limit
     
-    0 OK, 1 FAIL
+    (0 OK, 1 FAIL)
     ```
 
-=== "Node leak"
+=== "Memory leak"
 
     ```
     (FAIL) Test description here
       WARNING: 1 ObjectDB instance was leaked at exit (run with `--verbose` for details).
         at: cleanup (core/object/object.cpp:2536)
     
-    0 OK, 1 FAIL
-    ```
-
-=== "RefCounted leak"
-
-    ```
-    (FAIL) Test description here
-      WARNING: 3 ObjectDB instance was leaked at exit (run with `--verbose` for details).
-        at: cleanup (core/object/object.cpp:2536)
-    
-    0 OK, 1 FAIL
+    (0 OK, 1 FAIL)
     ```
 
 It's basically the result of your test scene and the [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)) messages.  
 
 ## Running multiple tests
-To run multiple tests, just add more `AssertScene` to your scene and name it however you want. Example:  
+To run multiple tests, just add more `AssertScene` to your scene.  
 
 <figure markdown="span">
 ![AssertReport with multiple AssertScene as children](./image02.png)
+</figure>
+
+If you have **many** tests and wants to organize them, you can put `AssertReport` inside `AssertReport`.  
+
+<figure markdown="span">
+![Showing that you can chain AssertReport with anothers AssertReport as children](./image03.png)
 </figure>

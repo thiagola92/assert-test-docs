@@ -12,7 +12,7 @@
         <meta name="author" content="thiagola92">
       
       
-        <link rel="canonical" href="https://thiagola92.github.io/assert-test-docs/getting_started/">
+        <link rel="canonical" href="https://thiagola92.github.io/assert-test-docs/tutorial/">
       
       
       
@@ -28,7 +28,7 @@
     
     
       
-        <title>Getting Started - Assert Test</title>
+        <title>Tutorial - Assert Test</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Started
+              Tutorial
             
           </span>
         </div>
@@ -287,12 +287,12 @@
           
   
   
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-rocket" viewBox="0 0 24 24"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
   
   <span class="md-ellipsis">
     
   
-  Getting Started
+  Tutorial
 
     
   </span>
@@ -306,12 +306,12 @@
         
   
   
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-rocket" viewBox="0 0 24 24"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-graduation-cap" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
   
   <span class="md-ellipsis">
     
   
-  Getting Started
+  Tutorial
 
     
   </span>
@@ -478,7 +478,7 @@
   
 
 
-<h1 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<h1 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h1>
 <h2 id="creating-a-test">Creating a test<a class="headerlink" href="#creating-a-test" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Create a scene to be tested</li>
@@ -498,7 +498,7 @@
 <p>The test is just a scene that close itself!  </p>
 </div>
 <h2 id="running-a-test">Running a test<a class="headerlink" href="#running-a-test" title="Permanent link">&para;</a></h2>
-<p>The first step is to create a scene which will be responsible for running your test scenes:  </p>
+<p>The first step is to create a scene which will be responsible for running your test scenes. It should have an <code>AssertReport</code> with one or more <code>AssertScene</code> as children.  </p>
 <figure>
 <img alt="Godot Scene Dock, showing AssertReport as root and AssertScene as child" src="./image00.png" />
 </figure>
@@ -514,11 +514,11 @@
 <img alt="AssertScene properties" src="./image01.png" />
 </figure>
 <p>Save this scene and execute it to start the tests! Your output should be something like:  </p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">No error</label><label for="__tabbed_1_2">Assert fail</label><label for="__tabbed_1_3">Timeouted</label><label for="__tabbed_1_4">Node leak</label><label for="__tabbed_1_5">RefCounted leak</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">No error</label><label for="__tabbed_1_2">Assert fail</label><label for="__tabbed_1_3">Timeouted</label><label for="__tabbed_1_4">Memory leak</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>(OK) Test description here
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1 OK, 0 FAIL
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>(1 OK, 0 FAIL)
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -526,13 +526,13 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  SCRIPT ERROR: Assertion failed: assert message here
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>      ...
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>0 OK, 1 FAIL
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>(0 OK, 1 FAIL)
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>(FAIL) Test description here --- Scene halted after exceeding time limit
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>0 OK, 1 FAIL
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>(0 OK, 1 FAIL)
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -540,24 +540,20 @@
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  WARNING: 1 ObjectDB instance was leaked at exit (run with `--verbose` for details).
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    at: cleanup (core/object/object.cpp:2536)
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>0 OK, 1 FAIL
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>(FAIL) Test description here
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  WARNING: 3 ObjectDB instance was leaked at exit (run with `--verbose` for details).
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    at: cleanup (core/object/object.cpp:2536)
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>0 OK, 1 FAIL
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>(0 OK, 1 FAIL)
 </span></code></pre></div>
 </div>
 </div>
 </div>
 <p>It's basically the result of your test scene and the <a href="https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)">stderr</a> messages.  </p>
 <h2 id="running-multiple-tests">Running multiple tests<a class="headerlink" href="#running-multiple-tests" title="Permanent link">&para;</a></h2>
-<p>To run multiple tests, just add more <code>AssertScene</code> to your scene and name it however you want. Example:  </p>
+<p>To run multiple tests, just add more <code>AssertScene</code> to your scene.  </p>
 <figure>
 <img alt="AssertReport with multiple AssertScene as children" src="./image02.png" />
+</figure>
+<p>If you have <strong>many</strong> tests and wants to organize them, you can put <code>AssertReport</code> inside <code>AssertReport</code>.  </p>
+<figure>
+<img alt="Showing that you can chain AssertReport with anothers AssertReport as children" src="./image03.png" />
 </figure>
 
 
