@@ -20,22 +20,19 @@ Godot has three objects that interact with memory in a different way:
 The classic "you allocated, you free it".  
 
 === "Memory leak"
-	```gdscript
+	```gdscript linenums="1"
 	func _ready() -> void:
 		var a := Object.new()
-		var b := Object.new()
 		
 		get_tree().quit.call_deferred()
 	```
 
 === "Fix"
-	```gdscript
+	```gdscript linenums="1" hl_lines="4"
 	func _ready() -> void:
 		var a := Object.new()
-		var b := Object.new()
 		
 		a.free()
-		b.free()
 		
 		get_tree().quit.call_deferred()
 	```
@@ -44,7 +41,7 @@ The classic "you allocated, you free it".
 If your object is built from others objects, you need to remember to free every single one.  
 
 === "Memory leak"
-	```gdscript
+	```gdscript linenums="1"
 	func _ready() -> void:
 		var a := Example.new()
 		
@@ -56,7 +53,7 @@ If your object is built from others objects, you need to remember to free every 
 	```
 
 === "Fix"
-	```gdscript
+	```gdscript linenums="1" hl_lines="4-5"
 	func _ready() -> void:
 		var a := Example.new()
 		
@@ -74,7 +71,7 @@ If your object is built from others objects, you need to remember to free every 
 When you free it, it will free the descedants before itself.  
 
 === "Memory leak"
-	```gdscript
+	```gdscript linenums="1"
 	func _ready() -> void:
 		var a := Node.new()
 		var b := Node.new()
@@ -85,7 +82,7 @@ When you free it, it will free the descedants before itself.
 	```
 	
 === "Fix"
-	```gdscript
+	```gdscript linenums="1" hl_lines="6"
 	func _ready() -> void:
 		var a := Node.new()
 		var b := Node.new()
@@ -100,7 +97,7 @@ When you free it, it will free the descedants before itself.
 If you remove a `Node` from it parent, you have to remember to manually free it later.  
 
 === "Memory leak"
-	```gdscript
+	```gdscript linenums="1"
 	func _ready() -> void:
 		var a := Node.new()
 		var b := Node.new()
@@ -112,7 +109,7 @@ If you remove a `Node` from it parent, you have to remember to manually free it 
 	```
 
 === "Fix"
-	```gdscript
+	```gdscript linenums="1" hl_lines="7-8"
 	func _ready() -> void:
 		var a := Node.new()
 		var b := Node.new()
@@ -128,7 +125,7 @@ If you remove a `Node` from it parent, you have to remember to manually free it 
 Do not confuse children with properties, a `Node` in the property needs to freed manually.  
 
 === "Memory leak"
-	```gdscript
+	```gdscript linenums="1"
 	func _ready() -> void:
 		var a := Example.new()
 		
@@ -142,7 +139,7 @@ Do not confuse children with properties, a `Node` in the property needs to freed
 	```
 
 === "Fix"
-	```gdscript
+	```gdscript linenums="1" hl_lines="4"
 	func _ready() -> void:
 		var a := Example.new()
 		
@@ -159,7 +156,7 @@ Do not confuse children with properties, a `Node` in the property needs to freed
 ## [RefCounted](https://docs.godotengine.org/en/latest/classes/class_refcounted.html)
 It will free itself when no one reference it anymore.  
 
-```gdscript
+```gdscript linenums="1"
 func _ready() -> void:
 	var a := RefCounted.new()
 	
@@ -167,10 +164,10 @@ func _ready() -> void:
 ```
 
 ### Cautions
-Avoid circular reference, otherwise it will never free itself. This can be avoided by using [WeakRef](https://docs.godotengine.org/en/stable/classes/class_weakref.html).  
+Avoid circular reference, otherwise it will never free itself.  
 
 === "Memory leak"
-	```gdscript
+	```gdscript linenums="1"
 	func _ready() -> void:
 		var a := Example.new()
 		var b := Example.new()
@@ -186,7 +183,7 @@ Avoid circular reference, otherwise it will never free itself. This can be avoid
 	```
 
 === "Fix"
-	```gdscript
+	```gdscript linenums="1" hl_lines="5-6 12"
 	func _ready() -> void:
 		var a := Example.new()
 		var b := Example.new()
@@ -200,6 +197,36 @@ Avoid circular reference, otherwise it will never free itself. This can be avoid
 	class Example extends RefCounted:
 		var r: WeakRef = null
 	```
+
+	[WeakRef](https://docs.godotengine.org/en/stable/classes/class_weakref.html) will not increase the reference count and to get back the reference use [`get_ref()`](https://docs.godotengine.org/en/stable/classes/class_weakref.html#class-weakref-method-get-ref).  
+
+	??? tip "Losing the autocomplete"
+		`WeakRef.get_ref()` returns a `Variant`, which means that you lose the autocomplete and needs to convert back to the correct type.  One way that to solve this (instead of always converting) is to create an intermediary class like:  
+		
+		```gdscript linenums="1" hl_lines="5-6 12 15-22"
+		func _ready() -> void:
+			var a := Example.new()
+			var b := Example.new()
+			
+			a.r = RefExample.new(b)
+			b.r = RefExample.new(a)
+			
+			get_tree().quit.call_deferred()
+	
+		
+		class Example extends RefCounted:
+			var r: RefExample = null
+	
+		
+		class RefExample extends RefCounted:
+			var r: WeakRef = null
+
+			func _init(e: Example) -> void:
+				r = weakref(e)
+
+			func get_ref() -> Example:
+				return r.get_ref() as Example
+		```
 
 ## References
 
