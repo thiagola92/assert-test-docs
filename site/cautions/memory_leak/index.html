@@ -486,6 +486,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="RefCounted">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cautions_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cautions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -620,6 +637,23 @@
       </span>
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="RefCounted">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cautions_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cautions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -846,8 +880,9 @@
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">quit</span><span class="o">.</span><span class="n">call_deferred</span><span class="p">()</span>
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">class</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span><span class="p">:</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">Node</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="k">class</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span><span class="p">:</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">Node</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -859,16 +894,61 @@
 </span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
 </span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">quit</span><span class="o">.</span><span class="n">call_deferred</span><span class="p">()</span>
 </span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="k">class</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span><span class="p">:</span>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">Node</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="k">class</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span><span class="p">:</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">Node</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
 </span></code></pre></div>
 </div>
 </div>
 </div>
 <h2 id="refcounted"><a href="https://docs.godotengine.org/en/latest/classes/class_refcounted.html">RefCounted</a><a class="headerlink" href="#refcounted" title="Permanent link">&para;</a></h2>
 <p>It will free itself when no one reference it anymore.  </p>
+<div class="language-gdscript highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">RefCounted</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">quit</span><span class="o">.</span><span class="n">call_deferred</span><span class="p">()</span>
+</span></code></pre></div>
+<h3 id="cautions_2">Cautions<a class="headerlink" href="#cautions_2" title="Permanent link">&para;</a></h3>
+<p>Avoid circular reference, otherwise it will never free itself. This can be avoided by using <a href="https://docs.godotengine.org/en/stable/classes/class_weakref.html">WeakRef</a>.  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Memory leak</label><label for="__tabbed_6_2">Fix</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-gdscript highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">Example</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">Example</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="n">a</span><span class="o">.</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="n">b</span><span class="o">.</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">quit</span><span class="o">.</span><span class="n">call_deferred</span><span class="p">()</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="k">class</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="n">RefCounted</span><span class="p">:</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">r</span><span class="p">:</span><span class="w"> </span><span class="n">RefCounted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">null</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-gdscript highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">Example</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">Example</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="n">a</span><span class="o">.</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">weakref</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="n">b</span><span class="o">.</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">weakref</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">quit</span><span class="o">.</span><span class="n">call_deferred</span><span class="p">()</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="k">class</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="n">RefCounted</span><span class="p">:</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">r</span><span class="p">:</span><span class="w"> </span><span class="n">WeakRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">null</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
+<li><a href="https://docs.godotengine.org/en/latest/classes/class_object.html">Object</a></li>
+<li><a href="https://docs.godotengine.org/en/latest/classes/class_node.html">Node</a></li>
+<li><a href="https://docs.godotengine.org/en/latest/classes/class_refcounted.html">RefCounted</a></li>
 <li><a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#memory-management">Memory Management</a></li>
 </ul>
 

@@ -135,6 +135,7 @@ Do not confuse children with properties, a `Node` in the property needs to freed
 		a.free()
 		
 		get_tree().quit.call_deferred()
+
 	
 	class Example extends Node:
 		var b := Node.new()
@@ -149,6 +150,7 @@ Do not confuse children with properties, a `Node` in the property needs to freed
 		a.free()
 		
 		get_tree().quit.call_deferred()
+
 	
 	class Example extends Node:
 		var b := Node.new()
@@ -157,6 +159,51 @@ Do not confuse children with properties, a `Node` in the property needs to freed
 ## [RefCounted](https://docs.godotengine.org/en/latest/classes/class_refcounted.html)
 It will free itself when no one reference it anymore.  
 
+```gdscript
+func _ready() -> void:
+	var a := RefCounted.new()
+	
+	get_tree().quit.call_deferred()
+```
+
+### Cautions
+Avoid circular reference, otherwise it will never free itself. This can be avoided by using [WeakRef](https://docs.godotengine.org/en/stable/classes/class_weakref.html).  
+
+=== "Memory leak"
+	```gdscript
+	func _ready() -> void:
+		var a := Example.new()
+		var b := Example.new()
+		
+		a.r = b
+		b.r = a
+		
+		get_tree().quit.call_deferred()
+
+	
+	class Example extends RefCounted:
+		var r: RefCounted = null
+	```
+
+=== "Fix"
+	```gdscript
+	func _ready() -> void:
+		var a := Example.new()
+		var b := Example.new()
+		
+		a.r = weakref(b)
+		b.r = weakref(a)
+		
+		get_tree().quit.call_deferred()
+
+	
+	class Example extends RefCounted:
+		var r: WeakRef = null
+	```
+
 ## References
 
+- [Object](https://docs.godotengine.org/en/latest/classes/class_object.html)
+- [Node](https://docs.godotengine.org/en/latest/classes/class_node.html)
+- [RefCounted](https://docs.godotengine.org/en/latest/classes/class_refcounted.html)
 - [Memory Management](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#memory-management)
