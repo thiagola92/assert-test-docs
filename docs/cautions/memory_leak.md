@@ -24,7 +24,7 @@ The classic "you allocated, you free it".
 	func _ready() -> void:
 		var a := Object.new()
 		
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 	```
 
 === "Fix"
@@ -34,7 +34,7 @@ The classic "you allocated, you free it".
 		
 		a.free()
 		
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 	```
 
 ### Cautions
@@ -45,7 +45,7 @@ If your object is built from others objects, you need to remember to free every 
 	func _ready() -> void:
 		var a := Example.new()
 		
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 	
 	
 	class Example extends Object:
@@ -60,7 +60,7 @@ If your object is built from others objects, you need to remember to free every 
 		a.b.free()
 		a.free()
 		
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 	
 	
 	class Example extends Object:
@@ -78,7 +78,7 @@ When you free it, it will free the descedants before itself.
 		
 		a.add_child(b)
 	
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 	```
 	
 === "Fix"
@@ -90,7 +90,7 @@ When you free it, it will free the descedants before itself.
 		a.add_child(b)
 		a.free()
 		
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 	```
 
 ### Cautions
@@ -105,7 +105,7 @@ If you remove a `Node` from it parent, you have to remember to manually free it 
 		a.add_child(b)
 		a.remove_child(b)
 		
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 	```
 
 === "Fix"
@@ -119,7 +119,7 @@ If you remove a `Node` from it parent, you have to remember to manually free it 
 		a.free()
 		b.free()
 	
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 	```
 
 Do not confuse children with properties, a `Node` in the property needs to freed manually.  
@@ -131,7 +131,7 @@ Do not confuse children with properties, a `Node` in the property needs to freed
 		
 		a.free()
 		
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 
 	
 	class Example extends Node:
@@ -146,7 +146,7 @@ Do not confuse children with properties, a `Node` in the property needs to freed
 		a.b.free()
 		a.free()
 		
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 
 	
 	class Example extends Node:
@@ -160,7 +160,7 @@ It will free itself when no one reference it anymore.
 func _ready() -> void:
 	var a := RefCounted.new()
 	
-	get_tree().quit.call_deferred()
+	get_tree().quit()
 ```
 
 ### Cautions
@@ -175,7 +175,7 @@ Avoid circular reference, otherwise it will never free itself.
 		a.r = b
 		b.r = a
 		
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 
 	
 	class Example extends RefCounted:
@@ -191,7 +191,7 @@ Avoid circular reference, otherwise it will never free itself.
 		a.r = weakref(b)
 		b.r = weakref(a)
 		
-		get_tree().quit.call_deferred()
+		get_tree().quit()
 
 	
 	class Example extends RefCounted:
@@ -211,7 +211,7 @@ Avoid circular reference, otherwise it will never free itself.
 			a.r = RefExample.new(b)
 			b.r = RefExample.new(a)
 			
-			get_tree().quit.call_deferred()
+			get_tree().quit()
 	
 		
 		class Example extends RefCounted:

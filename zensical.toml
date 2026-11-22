@@ -14,6 +14,7 @@ nav = [
   { "About" = "index.md" },
   { "Tutorial" = "tutorial/index.md" },
   { "Cautions" = [
+    { "Quitting" = "cautions/quitting.md" },
     { "Memory Leak" = "cautions/memory_leak.md" },
   ]}
 ]
