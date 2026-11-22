@@ -13,6 +13,9 @@ repo_name = "thiagola92/assert-test"
 nav = [
   { "About" = "index.md" },
   { "Tutorial" = "tutorial/index.md" },
+  { "Cautions" = [
+    { "Memory Leak" = "cautions/memory_leak.md" },
+  ]}
 ]
 
 # extra_css = ["stylesheets/extra.css"]
