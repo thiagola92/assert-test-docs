@@ -8,7 +8,7 @@ A very important part of these tests is knowing how to `quit()`. So pay attentio
 - `quit()`: Will quit the application at the **end of current iteration**
 - `assert()`: Failing will make the function return but the **application continues running**
 
-## Don't `assert()` before `quit()`
+## Avoid `assert()` before `quit()`
 
 The following code will never call the `quit()` because the `assert()` will fail and make the function return.  
 
@@ -30,8 +30,22 @@ func _ready() -> void:
 	assert(false)
 ```
 
+An alternative is letting the `assert()` code inside functions, so it continues after breaking.  
+
+```gdscript linenums="1"
+func _ready() -> void:
+	example()
+
+	# Called.
+	get_tree().quit()
+
+
+func example() -> void:
+	assert(false)
+```
+
 !!! info
-	This is not unique of `assert()`, Godot handle unexpected erros by making the function return it default value.  
+	This is not unique of `assert()`, Godot handle unexpected erros by making the function return the default value.  
 
 ## Always set `timeout`
 An error can happen in any part of your code and the worst is happening before your `quit()`. For example:  

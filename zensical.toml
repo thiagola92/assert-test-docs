@@ -16,7 +16,10 @@ nav = [
   { "Cautions" = [
     { "Quitting" = "cautions/quitting.md" },
     { "Memory Leak" = "cautions/memory_leak.md" },
-  ]}
+  ]},
+  { "Others" = [
+  	{ "Downsides" = "downsides.md" },
+  ]},
 ]
 
 # extra_css = ["stylesheets/extra.css"]
