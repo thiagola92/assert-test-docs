@@ -567,6 +567,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#false-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        False fail
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#feature-limitation" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -650,6 +661,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         Detailed information
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#false-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        False fail
       </span>
     </span>
   </a>
@@ -758,6 +780,15 @@
 <li>...</li>
 </ul>
 <p>If you want to know the error, you <strong>need</strong> to read the stderr.  </p>
+<h2 id="false-fail">False fail<a class="headerlink" href="#false-fail" title="Permanent link">&para;</a></h2>
+<p>If the presence of stderr is what indicates failing, then anyone can trigger a fail with:</p>
+<ul>
+<li><code>printerr()</code></li>
+<li><code>push_warning()</code></li>
+<li><code>push_error()</code></li>
+<li>manually writing to stderr</li>
+</ul>
+<p>Imagine that a plugin that you use has an tolerable error, it would generate an stderr and, consequently, mark your test as failed.  </p>
 <h2 id="feature-limitation">Feature limitation<a class="headerlink" href="#feature-limitation" title="Permanent link">&para;</a></h2>
 <p>If you are senior tester, you probably will not like the fact that we don't have many features like:  </p>
 <ul>

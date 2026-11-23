@@ -20,6 +20,16 @@ We use [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(s
 
 If you want to know the error, you **need** to read the stderr.  
 
+## False fail
+If the presence of stderr is what indicates failing, then anyone can trigger a fail with:
+
+- `printerr()`
+- `push_warning()`
+- `push_error()`
+- manually writing to stderr
+
+Imagine that a plugin that you use has an tolerable error, it would generate an stderr and, consequently, mark your test as failed.  
+
 ## Feature limitation
 If you are senior tester, you probably will not like the fact that we don't have many features like:  
 
