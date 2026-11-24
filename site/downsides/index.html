@@ -780,6 +780,38 @@
 <li>...</li>
 </ul>
 <p>If you want to know the error, you <strong>need</strong> to read the stderr.  </p>
+<details class="info">
+<summary>Other test frameworks</summary>
+<p>They are able to get details because they introduce their own asserts, so they are the ones collecting the error and registering informations.  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Gut</label><label for="__tabbed_1_2">GdUnit4</label><label for="__tabbed_1_3">TinyTest</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a href="https://gut.readthedocs.io/en/v9.6.0/class_ref/class_guttest.html#methods">~54 assert methods</a>.  </p>
+<ul>
+<li><code>assert_eq(variable, 10)</code></li>
+<li><code>assert_true(variable)</code></li>
+<li><code>assert_null(variable)</code></li>
+<li>...</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><a href="https://godot-gdunit-labs.github.io/gdUnit4/latest/testing/assert/">~14 assert methods (which expand in more validations)</a>.  </p>
+<ul>
+<li><code>assert_int(variable).is_equal(10)</code></li>
+<li><code>assert_bool(variable).is_true()</code></li>
+<li><code>assert_array(variable).is_empty()</code></li>
+<li>...</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><a href="https://codeberg.org/galanm/tiny_test#building-tests-sets">1 assert method</a>.  </p>
+<ul>
+<li><code>TinyTest.assert_true(true, "message")</code></li>
+</ul>
+</div>
+</div>
+</div>
+</details>
 <h2 id="false-fail">False fail<a class="headerlink" href="#false-fail" title="Permanent link">&para;</a></h2>
 <p>If the presence of stderr is what indicates failing, then anyone can trigger a fail with:</p>
 <ul>
