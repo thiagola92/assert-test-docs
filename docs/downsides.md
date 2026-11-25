@@ -54,6 +54,8 @@ If the presence of stderr is what indicates failing, then anyone can trigger a f
 
 Imagine that a plugin that you use has an tolerable error, it would generate an stderr and, consequently, mark your test as failed.  
 
+**My recommendation is**: `AssertScene` has a property `filter` that let you filter income text from stderr, you could attempt to remove the false fails.  
+
 ## Feature limitation
 If you are senior tester, you probably will not like the fact that we don't have many features like:  
 
