@@ -84,3 +84,9 @@ If you have **many** tests and wants to organize them, you can put `AssertReport
 <figure markdown="span">
 ![Showing that you can chain AssertReport with anothers AssertReport as children](./image03.png)
 </figure>
+
+In case you already have a directory with your test scenes (I don't know when this would happen), you can build the assert suit scene by right clicking the directory and selecting "Build Assert Suit".  
+
+<figure markdown="span">
+![Showing FileSystem dock after right clicking a directory, where the PopupMenu appears with a new option "Build Assert Suit"](./image04.png)
+</figure>
