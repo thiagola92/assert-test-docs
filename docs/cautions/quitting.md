@@ -47,8 +47,8 @@ func example() -> void:
 !!! info
 	This is not unique of `assert()`, Godot handle unexpected erros by making the function return the default value.  
 
-## Always set `timeout`
-An error can happen in any part of your code and the worst is happening before your `quit()`. For example:  
+## Always adjust `timeout`
+An error can happen in any part of your code and happening before a `quit()` is the worst possible case, because you will never send the request to close the test. For example:  
 
 ```gdscript linenums="1"
 func _ready() -> void:
@@ -61,7 +61,20 @@ func _ready() -> void:
 	get_tree().quit()
 ```
 
-If this happens, you will only know when `AssertScene` timeout and by default this is **30 seconds**, which is a lot... So I always recommend to reduce to an expected value.  
+To avoid letting the process running forever, `AssertScene` includes a property `timeout` to halt the process after some seconds (default is 3 seconds). You will know that your test was halted because we add a message to your report:  
+
+```
+(FAIL) Test description here --- Scene halted after exceeding time limit
+	SCRIPT ERROR: Invalid operands 'int' and 'Object' in operator '+'.
+	          at: _ready (res://tests/scenes/test_name.gd:8)
+	          GDScript backtrace (most recent call first):
+	              [0] _ready (res://tests/scenes/test_name.gd:8)
+```
+
+!!! note
+	Notice how you still receive any stderr that we collect during this time, so you can still indentify the problem.  
+
+The important part is to remember to adjust to an adequate value for longer tests.  
 
 
 ## References

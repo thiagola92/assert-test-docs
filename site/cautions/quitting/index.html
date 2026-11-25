@@ -437,10 +437,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#always-set-timeout" class="md-nav__link">
+  <a href="#always-adjust-timeout" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Always set <code>timeout</code>
+        Always adjust <code>timeout</code>
       </span>
     </span>
   </a>
@@ -648,10 +648,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#always-set-timeout" class="md-nav__link">
+  <a href="#always-adjust-timeout" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Always set <code>timeout</code>
+        Always adjust <code>timeout</code>
       </span>
     </span>
   </a>
@@ -800,8 +800,8 @@
 <p class="admonition-title">Info</p>
 <p>This is not unique of <code>assert()</code>, Godot handle unexpected erros by making the function return the default value.  </p>
 </div>
-<h2 id="always-set-timeout">Always set <code>timeout</code><a class="headerlink" href="#always-set-timeout" title="Permanent link">&para;</a></h2>
-<p>An error can happen in any part of your code and the worst is happening before your <code>quit()</code>. For example:  </p>
+<h2 id="always-adjust-timeout">Always adjust <code>timeout</code><a class="headerlink" href="#always-adjust-timeout" title="Permanent link">&para;</a></h2>
+<p>An error can happen in any part of your code and happening before a <code>quit()</code> is the worst possible case, because you will never send the request to close the test. For example:  </p>
 <div class="language-gdscript highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -818,7 +818,18 @@
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="c1"># Never called.</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
-<p>If this happens, you will only know when <code>AssertScene</code> timeout and by default this is <strong>30 seconds</strong>, which is a lot... So I always recommend to reduce to an expected value.  </p>
+<p>To avoid letting the process running forever, <code>AssertScene</code> includes a property <code>timeout</code> to halt the process after some seconds (default is 3 seconds). You will know that your test was halted because we add a message to your report:  </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>(FAIL) Test description here --- Scene halted after exceeding time limit
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    SCRIPT ERROR: Invalid operands 'int' and 'Object' in operator '+'.
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>              at: _ready (res://tests/scenes/test_name.gd:8)
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>              GDScript backtrace (most recent call first):
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>                  [0] _ready (res://tests/scenes/test_name.gd:8)
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice how you still receive any stderr that we collect during this time, so you can still indentify the problem.  </p>
+</div>
+<p>The important part is to remember to adjust to an adequate value for longer tests.  </p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://docs.godotengine.org/en/stable/classes/class_@gdscript.html#class-gdscript-method-assert"><code>assert()</code></a></li>
