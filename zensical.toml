@@ -13,9 +13,12 @@ repo_name = "thiagola92/assert-test"
 nav = [
   { "About" = "index.md" },
   { "Tutorial" = "tutorial/index.md" },
+  { "Filters" = "filters.md" },
   { "Cautions" = [
     { "Quitting" = "cautions/quitting.md" },
     { "Memory Leak" = "cautions/memory_leak.md" },
+    { "Performance" = "cautions/performance.md" },
+    { "Fake Fail" = "cautions/fake_fail.md" },
   ]},
   { "Others" = [
   	{ "Downsides" = "downsides.md" },
