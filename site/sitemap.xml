@@ -7,16 +7,19 @@
         <loc>https://thiagola92.github.io/assert-test-docs/cautions/fake_fail/</loc>
       </url>
       <url>
+        <loc>https://thiagola92.github.io/assert-test-docs/cautions/feature_limitation/</loc>
+      </url>
+      <url>
         <loc>https://thiagola92.github.io/assert-test-docs/cautions/memory_leak/</loc>
+      </url>
+      <url>
+        <loc>https://thiagola92.github.io/assert-test-docs/cautions/no_details/</loc>
       </url>
       <url>
         <loc>https://thiagola92.github.io/assert-test-docs/cautions/performance/</loc>
       </url>
       <url>
         <loc>https://thiagola92.github.io/assert-test-docs/cautions/quitting/</loc>
-      </url>
-      <url>
-        <loc>https://thiagola92.github.io/assert-test-docs/downsides/</loc>
       </url>
       <url>
         <loc>https://thiagola92.github.io/assert-test-docs/filters/</loc>

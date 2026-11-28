@@ -3,7 +3,7 @@ icon: lucide/funnel
 ---
 
 # Filters
-Every time that we get a text from stderr, we pass through an `AssertFilter` which apply changes to the text.  
+Every time that we get a text from [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))	, we pass through an `AssertFilter` which apply changes to the text.  
 
 - `AssertFilter` does nothing, is the base for others filters
 - `AssertFilterStart` filter lines that start with a specific text

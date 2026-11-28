@@ -1,16 +1,13 @@
 ---
-icon: lucide/heart-crack
+icon: lucide/search-x
 ---
 
-# Downsides
-I use this page to register negative sides of this addon (because it's not a [bed of roses](https://literarydevices.net/a-bed-of-roses/)).
-
-## Detailed information
+# No details
 We use [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)) to identify if an error occurred and that's it. We can't tell you details like:  
 
 - How many assert errors
 - How many memory leak errors
-- How many an assert failed
+- How many a specific assert failed
 - ...
 
 If you want to know the error, you **need** to read the stderr.  
@@ -38,14 +35,3 @@ If you want to know the error, you **need** to read the stderr.
 		[1 assert method](https://codeberg.org/galanm/tiny_test#building-tests-sets).  
 		
 		- `TinyTest.assert_true(true, "message")`
-
-## Feature limitation
-If you are senior tester, you probably will not like the fact that we don't have many features like:  
-
-- Test discovery
-- Test setup and teardown
-- Test doubles
-- Assertion library
-- ...
-
-If you can imagine, we probably don't have it.

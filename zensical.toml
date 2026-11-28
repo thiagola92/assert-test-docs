@@ -19,9 +19,8 @@ nav = [
     { "Memory Leak" = "cautions/memory_leak.md" },
     { "Performance" = "cautions/performance.md" },
     { "Fake Fail" = "cautions/fake_fail.md" },
-  ]},
-  { "Others" = [
-  	{ "Downsides" = "downsides.md" },
+    { "Feature Limitation" = "cautions/feature_limitation.md" },
+    { "No Details" = "cautions/no_details.md" },
   ]},
 ]
 
@@ -132,3 +131,7 @@ pymdownx.tabbed.alternate_style = true
 pymdownx.tabbed.combine_header_slug = true
 pymdownx.tasklist.custom_checkbox = true
 pymdownx.tilde = {}
+
+[project.plugins.mkdocs-video]
+is_video = true
+video_type = "mp4"

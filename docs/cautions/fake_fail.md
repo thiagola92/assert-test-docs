@@ -3,7 +3,7 @@ icon: lucide/hat-glasses
 ---
 
 # Fake fail
-If the presence of stderr is what indicates failing, then anyone can trigger a fail with:  
+If the presence of [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)) is what indicates failing, then anyone can trigger a fail with:  
 
 - [`printerr()`](https://docs.godotengine.org/en/stable/classes/class_@globalscope.html#class-globalscope-method-printerr)
 - [`push_warning()`](https://docs.godotengine.org/en/stable/classes/class_@globalscope.html#class-globalscope-method-push-warning)
